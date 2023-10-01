@@ -18,10 +18,14 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_TOKEN }}
+      - name: Get short SHA
+        id: git_sha
+        run: echo "::set-output name=SHA::$(git rev-parse --short HEAD)"
       - name: Build and push
         uses: docker/build-push-action@v5
         with:
+          context: .
           push: true
           tags: |
-            rajendrayadav/grpcserver:${{ github.sha }} |
-            rajendrayadav/grpcserver:latest
+            rajendrayadav/webServer:${{ steps.git_sha.outputs.SHA }} 
+            rajendrayadav/webServer:latest
