@@ -25,3 +25,8 @@ jobs:
           tags: |
             rajendrayadav/webserver:${{ github.sha }} 
             rajendrayadav/webserver:latest
+      - name: Update Dockerhub Image overview
+        uses: christian-korneck/dockerhub-description@v4
+        with:
+          repository: rajendrakumaryadav/webserver
+          readme_file: README.md
