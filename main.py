@@ -37,5 +37,5 @@ def hello():
 
 
 if __name__ == '__main__':
-    rest_port = os.getenv("RESTPORT", 500)
+    rest_port = os.getenv("RESTPORT", 5000)
     app.run(host='0.0.0.0', port=int(rest_port), debug=True)
