@@ -31,4 +31,4 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_TOKEN }}
           repository: rajendrayadav/webserver
-          readme-filepath: .README.md
+          readme-filepath: ./README.md
